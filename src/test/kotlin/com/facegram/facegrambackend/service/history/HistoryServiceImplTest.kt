@@ -4,23 +4,19 @@ import com.facegram.facegrambackend.domain.analyze.AnalysisRepository
 import com.facegram.facegrambackend.domain.user.User
 import com.facegram.facegrambackend.domain.user.UserRepository
 import com.facegram.facegrambackend.domain.user.UserRole
-import com.facegram.facegrambackend.dto.response.history.analysishistory.AnalysisHistoryResponseDto
 import com.facegram.facegrambackend.security.oauth2.user.AuthProvider
 import com.facegram.facegrambackend.service.responseentity.ResponseEntityService
-import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.*
-import org.junit.jupiter.api.AfterAll
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 import java.util.*
 
 @SpringBootTest
-class HistoryServiceTest constructor(
+class HistoryServiceImplTest constructor(
     private val analysisRepository: AnalysisRepository,
     private val userRepository: UserRepository,
     private val responseEntityService: ResponseEntityService,
-    private val historyService: HistoryService
+    private val historyServiceImpl: HistoryServiceImpl
 
 ){
 
@@ -40,7 +36,7 @@ class HistoryServiceTest constructor(
             )
         userRepository.save(testUser)
         // when
-        val historySearchByUser = historyService.historySearchByUser(randomNumber)
+        val historySearchByUser = historyServiceImpl.historySearchByUser(randomNumber)
 
         // then
         assertThat(historySearchByUser.size).isEqualTo(0)

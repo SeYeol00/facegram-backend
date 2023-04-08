@@ -5,12 +5,11 @@ import com.facegram.facegrambackend.dto.request.analysis.description.Description
 import com.facegram.facegrambackend.dto.request.analysis.info.InfoDto
 import com.facegram.facegrambackend.security.CustomUserDetails
 import com.facegram.facegrambackend.service.analysis.AnalysisService
+import com.facegram.facegrambackend.service.analysis.AnalysisServiceImpl
 import org.springframework.http.ResponseEntity
 import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RequestPart
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.multipart.MultipartFile
